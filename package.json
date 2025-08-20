@@ -1,0 +1,18 @@
+{
+  "name": "cracolandia",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^17.2.1",
+    "fs": "0.0.1-security",
+    "standard": "^16.0.3"
+  },
+  "description": ""
+}

@@ -1,0 +1,31 @@
+[
+  {
+    "Name": "Login", "Type": "LOGIN", "Cmd": "LOG"
+  },
+  {
+    "Name": "Heal", "Type": "FULLHEAL", "Cmd": "HEAL"
+  },
+  {
+    "Name": "Vigor", "Type": "UPDATE", "Cmd": "VIG"
+  },
+  {
+    "Name": "Strength", "Type": "UPDATE", "Cmd": "STR"
+  },
+  {
+    "Name": "Dexterity", "Type": "UPDATE", "Cmd": "DEX"
+  },
+  {
+    "Name": "Speed", "Type": "UPDATE", "Cmd": "SPD"
+  },
+  {
+    "Name": "Reflexes", "Type": "UPDATE", "Cmd": "RFX"
+  },
+  {
+    "Name": "Intelligence", "Type": "UPDATE", "Cmd": "INT"
+  },
+  {
+    "Name": "Attack", "Type": "ATTACK", "Cmd": "A", "attackMod": "Initiative", "Factor": "Physical", "Dices": 1, "Value": "12", "Effects": [
+
+  ]
+  }
+]

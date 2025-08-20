@@ -1,0 +1,18 @@
+// Area reserved for skills (so i wouldn't spam index.js)
+
+/* Basically, i have the skill name for the person to type and he can choose a character to use the skill against. I always check Esquiva (Dodge) and Acerto (Precision)
+to know if the skill will hit, and then i want to know about attack x defense.
+if(dado_dano = 20) is my way of replicating critical strikes, where i just double the dice.
+Skills have different rolls of dices and effects. One example is 'Preciso (Bullseye)', where if he hits the person with a result of 4 or plus, he will do extra damage.
+Skills will also always spend MP, that's 'mp_gasta (spent_mp)'.
+*/
+
+/* Not all of those skills are 100% done without any mistakes or programmed on the most time-effective way.
+ */
+
+module.exports = {
+  all: (rpgBot, db) => {
+    this.all;
+
+  },
+};
