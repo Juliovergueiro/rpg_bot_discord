@@ -1,18 +1,14 @@
 [
   {
-    "idPersonagem": 1, "idMembro": null, "Name": "Dummy", "lastName": "", "Level": 0, "Xp": 0, "xpDrop": 0, "ptsAttribute": 0, "ptsSkill": 0, "Vig": 5, "Str": 0, "Spd": 0, "Dex": 0, "Rfx": 0, "Int": 5, "maxHp": 50, "Hp": -32, "maxMp": 25, "Mp": 25, "maxAp": 1, "Ap": 1, "maxRp": null, "Rp": null, "onField": false, "iniResult": 0, "Adv": 2, "Disadv": 0, "Skills": [
-
-  ], "Perks": [
+    "idPersonagem": 1, "idMembro": null, "img": "../img/2.jpg", "Name": "Targeta certo KRL", "lastName": "", "Level": 0, "Xp": 0, "xpDrop": 0, "ptsAttribute": 0, "ptsSkill": 0, "Vig": 5, "Str": 0, "Spd": 0, "Dex": 0, "Rfx": 0, "Pro": 0, "Int": 5, "Spi": 0, "maxHp": 50, "Hp": -32, "maxMp": 25, "Mp": 25, "maxAp": 1, "Ap": 1, "maxRp": null, "Rp": null, "onField": false, "iniResult": 0, "Adv": 2, "Disadv": 0, "Perks": [
     "Tough Skin [1]"
   ], "Traits": [
 
-  ]
+  ], "enemyName": "Fio", "enemyAtkDmg": 5, "enemyAtk": 11, "enemyDmg": 7, "enemySkill": "A"
   },
   {
-    "idPersonagem": 2, "idMembro": "310842452049133588", "Name": "Fio", "lastName": "", "Level": 0, "Xp": 0, "xpDrop": 0, "ptsAttribute": 0, "ptsSkill": 0, "Vig": 5, "Str": 0, "Spd": 0, "Dex": 0, "Rfx": 0, "Int": 5, "maxHp": 50, "Hp": 50, "maxMp": 25, "Mp": 25, "maxAp": 1, "Ap": 1, "maxRp": null, "Rp": null, "onField": false, "iniResult": 0, "Adv": 0, "Disadv": -2, "Skills": [
-
-  ], "Perks": [
-    "Tough Skin: 1"
+    "idPersonagem": 2, "idMembro": "310842452049133588", "img": "../img/4.jpg", "Name": "Fio", "lastName": "", "Level": 0, "Xp": 0, "xpDrop": 0, "ptsAttribute": 0, "ptsSkill": 0, "Vig": 5, "Str": 0, "Spd": 3, "Dex": 5, "Rfx": 2, "Pro": 0, "Int": 5, "Spi": 0, "maxVit": 50, "Vit": 25, "maxPost": 20, "Post": 16, "maxMp": 25, "Mp": 25, "maxAp": 1, "Ap": 4, "onField": false, "iniResult": 0, "enemyName": "Fio", "enemyAtk": 10, "enemyDmg": 10, "enemyAtkDmg": 5, "enemySkill": "A", "Perks": [
+    "Chain Mail"
   ], "Traits": [
 
   ]

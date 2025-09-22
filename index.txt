@@ -1,0 +1,245 @@
+//fs.readFile("./usuarios.json", "utf8", (err, data) => {
+//  if (err) {
+//    console.error(err);
+//    return;
+//  }
+//  usuarios = JSON.parse(data).usuarios;
+  // console.log(usuarios[0].nome)
+//});
+
+/*
+
+rpgBot.on("message", (msg) => {
+  let inicio_comando = msg.content.toUpperCase().split(" ")[0];
+  if (inicio_comando == "LOGIN") {
+    let nome_personagem = msg.content.split(" ");
+    nome_personagem = nome_personagem.splice(1, 5);
+    nome_personagem = nome_personagem.join(" ");
+
+    let char = db.get("usuarios").find({ Nome: nome_personagem }).value();
+    let id_member = msg.member.id;
+    let deslogando = personagem_logado(id_member);
+    let atualizar = null;
+
+    db.get("usuarios")
+      .find({ id_personagem: char.id_personagem })
+      .assign({ id_membro: id_member })
+      .value();
+    db.get("usuarios")
+      .find({ id_personagem: deslogando.id_personagem })
+      .assign({ id_membro: atualizar })
+      .value();
+    db.write();
+    msg.delete();
+  }
+});
+
+// Command to log in a character
+
+rpgBot.on("message", (msg) => {
+  let inicio_comando = msg.content.toUpperCase().split(" ")[0];
+  if (inicio_comando == "LOGIN") {
+    let nome_personagem = msg.content.split(" ");
+    nome_personagem = nome_personagem.splice(1, 5);
+    nome_personagem = nome_personagem.join(" ");
+
+    let char = db.get("usuarios").find({ Nome: nome_personagem }).value();
+    let id_member = msg.member.id;
+    let deslogando = personagem_logado(id_member);
+    let atualizar = null;
+
+    db.get("usuarios")
+      .find({ id_personagem: char.id_personagem })
+      .assign({ id_membro: id_member })
+      .value();
+    db.get("usuarios")
+      .find({ id_personagem: deslogando.id_personagem })
+      .assign({ id_membro: atualizar })
+      .value();
+    db.write();
+    msg.delete();
+  }
+});
+
+// How our commands will reach our characters
+
+function personagem_existe(nome_personagem) {
+  let usuario_existente = db
+    .get("usuarios")
+    .find({ nome: nome_personagem })
+    .value();
+  return usuario_existente ? true : false;
+}
+
+// Used when i want the person to target its own character
+
+function personagem_logado(id_member) {
+  let personagem = db.get("usuarios").find({ id_membro: id_member }).value();
+  return personagem ? personagem : false;
+}
+
+/* Players spreadsheets, they manually chose the major attributes (força = strength, agilidade = agility...), i updated the values here for them and let the system calculate
+the attributes minor values and do a final count of every attribute so they could know if they had more Level than Max Attributes. If they had more Level, they could
+manually Level Up and choose more attributes
+
+
+rpgBot.on("message", (msg) => {
+  let inicio_comando = msg.content.toUpperCase().split(" ")[0];
+  if (inicio_comando == "TABELAMODS") {
+    let nome_personagem = msg.content.split(" ");
+    nome_personagem = nome_personagem.splice(1, 5);
+    nome_personagem = nome_personagem.join(" ");
+
+    let char = db.get("usuarios").find({ Nome: nome_personagem }).value();
+    char.Dist = "Curta";
+    char.Arena = "N";
+    char.Condicao = "N";
+    char.Estado = "N";
+    char.Fisico = "N";
+    char.SobGenjutsu = "N";
+    char.Terreno = "N";
+    char.Campo = "N";
+    char.Voo = "N";
+    char.Confronto = "N";
+    char.Furtivo = "N";
+    char.AtkFurtivo = "N";
+    char.Arma = ".";
+    char.Acessorio = ".";
+    char.TipoBunshin = ".";
+    char.Bunshins = 0;
+    char.Disfarce = ".";
+    char.HP_Ativacao = 0;
+    char.MP_Ativacao = 0;
+    char.NomeAtivacao = ".";
+    char.ElementoAtivacao = ".";
+    char.Dojutsu = ".";
+    char.JutsuDefensivo = 0;
+    char.ValorConfronto = 0;
+    char.TipoTecnica = ".";
+    char.ElementoConfronto = ".";
+    char.Chakurato = ".";
+    char.Kuchiyose = ".";
+    char.DificuldadeArena = 0;
+    char.DanoCondicao = 0;
+    char.ControleCondicao = 0;
+    char.ControleGenjutsu = 0;
+    char.Peso = 0;
+    char.Protegido = "N";
+    char.Protetor = "N";
+    char.Argila = 0;
+    char.C3Countdown = 0;
+    char.C4Countdown = 0;
+    char.CargasJinton = 0;
+    char.KuroiKaminari = "N";
+    char.AcoesBuff = 0;
+    char.AcoesDebuff = 0;
+    char.FATecnica = 0;
+    char.FDTecnica = 0;
+    char.FETecnica = 0;
+    char.ACTecnica = 0;
+    char.ESTecnica = 0;
+    char.IniTecnica = 0;
+    char.FurTecnica = 0;
+    db.write();
+
+    msg.reply("Mods Feitos!");
+  }
+});
+
+// Cria um NPC com os Modificadores ideais
+
+rpgBot.on("message", (msg) => {
+  let inicio_comando = msg.content.toUpperCase().split(" ")[0];
+  if (inicio_comando == "NPCCREATE") {
+    let nome_personagem = msg.content.split(" ");
+    nome_personagem = nome_personagem.splice(1, 5);
+    nome_personagem = nome_personagem.join(" ");
+
+    let char = db.get("usuarios").find({ nome: nome_personagem }).value();
+    char.nome = nome_personagem;
+    char.Max_HP = 50;
+    char.HP = 50;
+    char.Vig = 0;
+    char.Ref = 0;
+    char.Des = 0;
+    char.Int = 0;
+    char.Car = 0;
+    char.Fri = 0;
+    char.Armor = 0;
+    char.Ini = 0;
+    char.Fur = 0;
+    char.Letalidade = 0;
+    char.Precisao = 0;
+    db.write();
+
+    msg.reply("NPC Criado!");
+  }
+});
+
+// My players could type this to check the character they were logged in
+
+rpgBot.on("message", (msg) => {
+  let inicio_comando = msg.content.toUpperCase().split(" ")[0];
+  if (inicio_comando == "CHECK") {
+    let id_member = msg.member.id;
+    let ver = personagem_logado(id_member);
+    msg.reply(`Vendo informações de ${ver.Nome} ${ver.Foto}
+
+        **HP Max:** ${ver.Max_HP}, **HP Atual:** ${ver.HP}
+
+        **MP Max:** ${ver.Max_MP}, **MP Atual:** ${ver.MP}
+
+        **Distância Atual:** ${ver.Dist}
+
+        **Condição:** ${ver.Condicao}, **Arena:** ${ver.Arena}
+
+        **XP:** ${ver.XP}, **Nivel:** ${ver.Nivel}, **Pts de Atributo:** ${ver.Pts_Atributo}
+
+        **FA:** ${ver.FA}, **Res:** ${ver.Res}, **FE:** ${ver.FE}
+
+        **AC:** ${ver.AC}, **ES:** ${ver.ES}, **Ini:** ${ver.Ini}
+
+        **Vigor:** ${ver.Vig}, **Destreza:** ${ver.Des}, **Vigor:** ${ver.Vig}
+
+        **Intelecto:** ${ver.Int}, **Carisma:** ${ver.Car}, **Vontade:** ${ver.Von}`);
+    msg.delete();
+  }
+});
+
+rpgBot.on("message", (msg) => {
+  let inicio_comando = msg.content.toUpperCase().split(" ")[0];
+  if (inicio_comando == "MODS") {
+    let id_member = msg.member.id;
+    let ver = personagem_logado(id_member);
+    msg.reply(`Vendo informações de ${ver.nome} ${ver.foto}
+
+        **Ativação:** ${ver.MP_Ativacao}
+
+        **Jutsu Defensivo:** ${ver.JutsuDefensivo}, **Kuchiyose:** ${ver.Kuchiyose}
+
+        **Bunshins:** ${ver.Bunshins}
+
+        **Peso:** ${ver.Peso}, **Voo:** ${ver.Voo}, **Chakurato:** ${ver.Chakurato}
+
+        **FA Tecnica:** ${ver.FATecnica}, **FD Tecnica:** ${ver.FDTecnica}, **FE Tecnica:** ${ver.FETecnica}
+
+        **AC Tecnica:** ${ver.ATArmado}, **ES Tecnica:** ${ver.DEArmado}, **AC Armado:** ${ver.ACArmado}, **ES Armado:** ${ver.ESArmado}`);
+    msg.delete();
+  }
+});
+
+function ConsultaFicha(nome_personagem) {
+  let Ficha = db.get("usuarios").find({ nome: nome_personagem }).value();
+
+  if (Ficha.ativo) {
+    console.log("if");
+    let Ativo = db.get("Ativos").find({ nome: Ficha.ativo }).value();
+    console.log(Ativo);
+    // db.get("usuarios").find({ nome : nome_personagem }).assign({ mp: mp_gasta}).value()
+  } else {
+    console.log("else");
+    return Ficha;
+  }
+}
+
+*/

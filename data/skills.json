@@ -1,30 +1,43 @@
 [
   {
-    "Name": "Login", "Type": "LOGIN", "Cmd": "LOG"
+    "Name": "Login", "Category": "LOGIN", "Cmd": "LOG"
   },
   {
-    "Name": "Heal", "Type": "FULLHEAL", "Cmd": "HEAL"
+    "Name": "Heal", "Category": "FULLHEAL", "Cmd": "HEAL"
   },
   {
-    "Name": "Vigor", "Type": "UPDATE", "Cmd": "VIG"
+    "Name": "Vigor", "Category": "UPDATE", "Cmd": "VIG"
   },
   {
-    "Name": "Strength", "Type": "UPDATE", "Cmd": "STR"
+    "Name": "Strength", "Category": "UPDATE", "Cmd": "STR"
   },
   {
-    "Name": "Dexterity", "Type": "UPDATE", "Cmd": "DEX"
+    "Name": "Dexterity", "Category": "UPDATE", "Cmd": "DEX"
   },
   {
-    "Name": "Speed", "Type": "UPDATE", "Cmd": "SPD"
+    "Name": "Speed", "Category": "UPDATE", "Cmd": "SPD"
   },
   {
-    "Name": "Reflexes", "Type": "UPDATE", "Cmd": "RFX"
+    "Name": "Reflexes", "Category": "UPDATE", "Cmd": "RFX"
   },
   {
-    "Name": "Intelligence", "Type": "UPDATE", "Cmd": "INT"
+    "Name": "Intelligence", "Category": "UPDATE", "Cmd": "INT"
   },
   {
-    "Name": "Attack", "Type": "ATTACK", "Cmd": "A", "attackMod": "Initiative", "Factor": "Physical", "Dices": 1, "Value": "12", "Effects": [
+    "Name": "Chain Mail", "Category": "ITEM", "Cmd": "CHMAIL"
+  },
+  {
+    "Name": "Dodge", "Category": "DEFENSE", "Cmd": "D", "Type": "Dodge", "Class": "", "Effects": [
+
+  ]
+  },
+  {
+    "Name": "Parry", "Category": "DEFENSE", "Cmd": "P", "Type": "Parry", "Class": "", "Effects": [
+
+  ]
+  },
+  {
+    "Name": "Attack", "Category": "ATTACK", "Cmd": "A", "Type": "Physical", "Class": "Concussion", "atkMod": "Dex", "dmgMod": "Dex", "dmgMult": 0.5, "atkDmg": 1, "apCost": 1, "Dices": 1, "Value": 6, "Effects": [
 
   ]
   }

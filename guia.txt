@@ -1,0 +1,9 @@
+name da skill é o nome publico
+category é a categoria dela, se é uma ação, reação ou até uma skill q é feita só pra mexer no sistema
+cmd é o comando pra usar
+type é o tipo do ataque, se é fisico, magico
+class é a classe do dano, se é concussao, slashing
+atkMod é o atributo que aumenta o Attack dela
+dmgMod é o atributo que aumenta o Damage dela
+dmgMult é o atributo que multiplica o dmgMod (se a skill vai ler 2x dex, 1.5, etc)
+atkDmg é o mod de +dano flat, mas o modificador "Attack Damage" da skill vale tanto o +flat quanto o atributo multiplicado pelo dmgMod
